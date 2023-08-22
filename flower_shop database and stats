@@ -1,0 +1,35 @@
+CREATE TABLE flower_shop (id INTEGER PRIMARY KEY, name TEXT, quanity INTEGER, price INTEGER, smell TEXT); 
+
+INSERT INTO flower_shop VALUES (1, "red_roses", 3, 5.99, "yes"); 
+INSERT INTO flower_shop VALUES (2, "white_roses",4, 5.99, "no"); 
+INSERT INTO flower_shop VALUES (3, "yellow_roses",5, 5.99, "no"); 
+INSERT INTO flower_shop VALUES (4, "green_roses",10, 5.99, "yes");
+INSERT INTO flower_shop VALUES (5, "pink_roses",2, 5.99, "yes");
+INSERT INTO flower_shop VALUES (6, "blue_roses", 7, 5.99, "no"); 
+INSERT INTO flower_shop VALUES (7, "purple_roses",8, 5.99, "no");
+INSERT INTO flower_shop VALUES (8, "orange_roses",9, 6.99, "yes");
+INSERT INTO flower_shop VALUES (9, "black_roses",5, 6.99, "yes");
+INSERT INTO flower_shop VALUES (10, "brown_roses",15, 6.99, "yes");
+INSERT INTO flower_shop VALUES (11, "peach_roses",12, 6.99, "no");
+INSERT INTO flower_shop VALUES (12, "violet_roses",11, 6.99, "yes");
+INSERT INTO flower_shop VALUES (13, "indigo_roses",13, 6.99, "yes");
+INSERT INTO flower_shop VALUES (14, "gray_roses",1, 5.99, "no");
+INSERT INTO flower_shop VALUES (15, "turquoiise_roses",14, 6.99, "yes");
+
+-display all data in database and ordered by price. 
+SELECT * FROM flower_shop
+ORDER BY price DESC;
+
+-display max quanity of flowers and ordered by smell
+SELECT MAX(quanity) FROM flower_shop
+ORDER BY smell; 
+
+-display avg price of flowers
+SELECT AVG(price) FROM flower_shop as avg_flower_price 
+ORDER BY smell; 
+
+-display top 5 items in stock
+SELECT name, quanity, price
+FROM flower_shop
+ORDER BY quanity
+LIMIT 5; 
